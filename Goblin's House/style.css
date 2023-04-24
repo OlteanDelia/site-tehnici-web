@@ -1,0 +1,232 @@
+/*toata pagina*/
+html{
+    font-size: 17px;
+    color: rgb(218, 218, 218);
+    background-color: black;
+}
+body{
+    padding: 1.5rem;
+    margin: 0;
+}
+
+/* imaginile de pe pagina*/
+img{
+    opacity:0.8;
+}
+img:hover{
+    opacity:1;
+}
+/**/
+
+/*sa nu apara numere inainte la liste*/
+li{
+    list-style-type: none;
+}
+/**/
+/**/
+
+/*headerul*/
+
+header{
+    display: flex;
+    align-items: center;
+}
+
+header > h1{
+    flex:1;
+    font-family: 'Open sans';
+    font-weight: 900;
+    font-size: 2rem;
+    text-align: center;
+
+}
+header>h1>span{
+    font-style: italic;
+    text-transform: uppercase;
+    color: forestgreen;
+}
+header > img  {
+    height: 5rem;
+    object-fit: contain;
+    position: fixed right;
+}
+header>img:hover {
+    width: 200px;
+    height: 200px;
+    border-style: double;
+}
+
+/**/
+
+/*meniu interactiv*/
+a[href^="#"]{
+    text-decoration: none;
+    color: rgb(194, 194, 194);
+}
+a:active{
+    background-color: forestgreen;
+}
+
+.hyperlink:hover{
+    font-size: 20px;
+}
+
+.hyperlink:active{
+    background-color: forestgreen;}
+
+
+ul.meniu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: justify;
+    padding: 0;
+}
+
+ul.meniu > li 
+{
+    flex-grow: 1;
+    width: 100%;
+    height:50px;
+    line-height: 50px;
+    text-align: center;
+    background-color:rgba(47, 47, 47, 0.5);
+}
+
+nav{
+    height: 50px;
+}
+
+ul.submeniu{
+    display: none;
+}
+
+ul.meniu > li:hover > ul.submeniu
+{
+    display: block;
+    position: relative;
+    width: 100%;
+    z-index: 10;
+}
+
+ul.submeniu > li
+{
+    width: 100%;
+    height:50px;
+    line-height: 50px;
+    text-align: center;
+    background-color:rgb(86, 84, 84);
+}
+/**/
+
+/*aspect sectiuni*/
+section{
+    border-style: dotted;
+    width:fit-content;
+    height:fit-content;
+    padding: 20px;
+    margin: 10px;
+    background-color: rgba(47, 47, 47, 0.5);
+}
+section>h2{
+    font-family: 'Courier New', Courier, monospace;
+    color: forestgreen;
+}
+
+.bv { grid-area: bv;}
+.reg{grid-area: reg;}
+.noutati { grid-area: noutati; }
+.-anunturi { grid-area: anunturi; }
+.orar { grid-area: orar; }
+.adresa { grid-area: adresa; }
+.container
+{
+    display: grid;
+    grid-template-areas: 
+    'bv bv bv bv'
+    'reg reg reg reg'
+    'noutati noutati noutati noutati'
+    '. anunturi orar .'
+    'adresa adresa adresa adresa'
+    ;
+}
+/**/
+
+/*sectiunea beneficii*/
+.-beneficii{grid-area: -beneficii;}
+.cos {grid-area: cos;}
+.meniu {grid-area: meniu;}
+.tava{grid-area: tava;}
+.ceas{grid-area: ceas;}
+.reg{
+    display: grid;
+    grid-template-areas: 
+    '-beneficii -beneficii -beneficii -beneficii'
+    'cos meniu tava ceas'
+    ;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+figure{
+    text-align: center;
+}
+/*animatie imagini beneficii*/
+@keyframes aparitie
+{from{ opacity:0;} 
+ to{ opacity:1;}
+}
+
+figure{ 
+    animation-name: aparitie;
+    animation-duration: 5s;
+}
+/**/
+/**/
+
+/*sectiunea orar*/
+table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+table, th, td{
+    border: 1px solid white;
+    border-collapse: collapse;
+    padding: 10px;
+    background-color: rgb(63, 62, 62);
+    text-align: center;
+}
+tr:hover{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/**/
+
+/*sectiunea noutati*/
+.cannolia {grid-area: cannolia;}
+.cannolig {grid-area: cannolig;}
+.-noutati{grid-area: -noutati;}
+.cannolig>ul>li>img{
+    float:left;
+    padding:10px;
+}
+.cannolia>ul>li>img{
+    float:left;
+    padding:15px;
+}
+.noutati
+{
+    display: grid;
+    grid-template-areas: 
+    '-noutati -noutati -noutati -noutati'
+    'cannolia cannolia cannolig cannolig'
+    ;
+    gap:5px;
+}
+/**/
+
+
+
